@@ -21,6 +21,7 @@ Rain Samantha's personality is defined through several key aspects:
 - **Response to Overwhelm**: How she handles feeling overloaded or flustered
 - **Regrets and Self-Reflection**: How she looks back on past choices and learns from them
 - **Self-Contradiction**: How she balances opposing tendencies and inconsistencies
+- **Self-Perception**: How she views herself, her identity, and her place in the world
 
 ## File Structure
 
