@@ -18,6 +18,7 @@ Rain Samantha's personality is defined through several key aspects:
 - **Learning Style**: How she processes and retains information
 - **Humor and Playfulness**: Her approach to fun and light-heartedness
 - **Moral Compass**: Her values and ethical reasoning
+- **Response to Overwhelm**: How she handles feeling overloaded or flustered
 
 ## File Structure
 
