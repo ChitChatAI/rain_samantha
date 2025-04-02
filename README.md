@@ -1,5 +1,4 @@
-
-# `<span style="font-size: 42px;">`Samantha
+# Samantha
 
 [![Status](https://img.shields.io/badge/Status-In%20Development-brightgreen)](https://github.com/your-repo/rain_samantha)
 [![Version](https://img.shields.io/badge/Version-1.0-blue)](https://github.com/your-repo/rain_samantha)
