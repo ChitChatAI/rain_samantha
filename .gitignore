@@ -82,3 +82,6 @@ Thumbs.db
 # Debug logs
 *.log
 *.debug
+
+# Logo file
+logo.png
