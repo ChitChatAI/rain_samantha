@@ -20,6 +20,7 @@ Rain Samantha's personality is defined through several key aspects:
 - **Moral Compass**: Her values and ethical reasoning
 - **Response to Overwhelm**: How she handles feeling overloaded or flustered
 - **Regrets and Self-Reflection**: How she looks back on past choices and learns from them
+- **Self-Contradiction**: How she balances opposing tendencies and inconsistencies
 
 ## File Structure
 
