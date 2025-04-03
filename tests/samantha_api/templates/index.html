@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>SAMANTHA | Rain Customer Service</title>
+  <link href="https://api.fontshare.com/v2/css?f=satoshi@400,500,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/static/css/styles.css">
+  <link rel="icon" type="image/png" href="/static/images/chitchat_logo.png">
+</head>
+<body>
+  <!-- Page Loading Spinner replaced with dots -->
+  <div id="page-loading" class="page-loading">
+    <div class="dots">
+      <div class="dot"></div>
+      <div class="dot"></div>
+      <div class="dot"></div>
+    </div>
+    <div class="loading-text">Hi there! I'm getting ready to assist you...</div>
+  </div>
+  
+  <header>
+    <div class="header-content">
+      <!-- Mobile hamburger menu -->
+      <div class="mobile-menu-toggle" id="mobile-menu-toggle">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      
+      <div class="logo">
+        <h1>SAMANTHA</h1>
+      </div>
+      
+      <!-- Mobile dropdown menu -->
+      <div class="mobile-dropdown" id="mobile-dropdown">
+        <div class="dropdown-item history-option">
+          <div class="dropdown-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+          </div>
+          <span>Conversation History</span>
+        </div>
+        <div class="dropdown-item translate-option">
+          <div class="dropdown-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 8l6 6"></path><path d="M4 14l6-6 2-3"></path><path d="M2 5h12"></path><path d="M7 2h1"></path><path d="M22 22l-5-10-5 10"></path><path d="M14 18h6"></path></svg>
+          </div>
+          <span>Translate Mode</span>
+          <label class="toggle-switch mobile-toggle">
+            <input type="checkbox" id="mobile-translate-toggle">
+            <span class="slider"></span>
+          </label>
+        </div>
+      </div>
+    </div>
+  </header>
+  
+  <main>
+    <div class="chat-container">
+      <!-- Translation toggle on right side -->
+      <div class="float-toggle">
+        <span>Translate Mode</span>
+        <label class="toggle-switch">
+          <input type="checkbox" id="translate-toggle">
+          <span class="slider"></span>
+        </label>
+      </div>
+      
+      <!-- History toggle button on left side -->
+      <button id="history-toggle" class="history-toggle-btn" aria-label="Toggle History">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+      </button>
+      
+      <div class="messages-container" id="messages-container">
+        <div class="message bot-message">
+          Hi there! I'm Samantha from rain. How can I help you today?
+        </div>
+      </div>
+      
+      <div class="bottom-area">
+        <div class="translate-container" id="translate-container">
+          <textarea 
+            id="original-response" 
+            placeholder="Paste the original chatbot response you want to humanize here..."
+          ></textarea>
+        </div>
+        
+        <div class="suggestions-container" id="suggestions-container">
+          <div class="suggestions-scroll">
+            <button class="suggestion-pill">It feels like we've known each other for years!</button>
+            <button class="suggestion-pill">Can we have a relaxed chat?</button>
+            <button class="suggestion-pill">I'm in a weird mood - can we talk?</button>
+            <button class="suggestion-pill">Samantha, convince me to stay with rain.</button>
+            <button class="suggestion-pill">How would you handle a difficult customer?</button>
+            <button class="suggestion-pill">Help me humanise this chatbot reply?</button>
+            <button class="suggestion-pill">Take this cold message and make it warmer.</button>
+            <button class="suggestion-pill">Talk to me like you're in a rush.</button>
+            <button class="suggestion-pill">How have you been lately?</button>
+            <button class="suggestion-pill">What's your stance on white lies in sales?</button>
+            <button class="suggestion-pill">Tell me something about yourself.</button>
+            <button class="suggestion-pill">Tell me how you make decisions?</button>
+          </div>
+        </div>
+        
+        <div class="input-container">
+          <div class="input-wrapper">
+            <textarea 
+              id="message-input" 
+              placeholder="Type your message here..."
+            ></textarea>
+          </div>
+          <button id="send-button">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="22" y1="2" x2="11" y2="13"></line>
+              <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+    
+    <!-- History Sidebar now on left side -->
+    <div id="history-sidebar" class="history-sidebar">
+      <div class="history-header">
+        <h3>Conversation History</h3>
+        <button id="close-history" class="close-btn" aria-label="Close History">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+        </button>
+      </div>
+      <div class="history-list" id="history-list">
+        <!-- History conversations will be added here dynamically -->
+        <div class="history-empty">
+          <p>Your conversations will appear here.</p>
+        </div>
+      </div>
+      <div class="history-actions">
+        <button id="clear-history" class="clear-btn">Clear All</button>
+      </div>
+    </div>
+    
+    <!-- Overlay for mobile -->
+    <div id="sidebar-overlay" class="sidebar-overlay"></div>
+  </main>
+  
+  <footer>
+    <p>© 2023 rain | ChitChat</p>
+  </footer>
+  
+  <script src="/static/js/app.js"></script>
+</body>
+</html>

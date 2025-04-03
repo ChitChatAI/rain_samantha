@@ -38,6 +38,7 @@ build/
 .env.development.local
 .env.test.local
 .env.production.local
+tests\samantha_api\venv
 
 # IDE-specific files
 .idea/
