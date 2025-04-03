@@ -76,3 +76,4 @@ temp/
 # Development database
 *.db
 *.sqlite3
+.vercel
