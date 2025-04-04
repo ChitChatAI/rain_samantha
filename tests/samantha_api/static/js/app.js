@@ -78,6 +78,16 @@ document.addEventListener('DOMContentLoaded', () => {
     isTranslateMode = translateToggle.checked;
     translateContainer.classList.toggle('active', isTranslateMode);
     
+    // Hide suggestions when translate mode is active
+    if (isTranslateMode) {
+      suggestionsContainer.classList.add('hidden');
+    } else {
+      // Only show suggestions if input is empty
+      if (messageInput.value.trim() === '') {
+        suggestionsContainer.classList.remove('hidden');
+      }
+    }
+    
     // Add dramatic active class to the toggle container
     const toggleContainer = document.querySelector('.float-toggle');
     toggleContainer.classList.add('active');
@@ -236,6 +246,14 @@ document.addEventListener('DOMContentLoaded', () => {
       sendButton.disabled = false;
       scrollToBottom();
     }
+    
+    // After sending a message, the input is cleared, so suggestions should be shown
+    // unless translate mode is active
+    setTimeout(() => {
+      if (!isTranslateMode) {
+        suggestionsContainer.classList.remove('hidden');
+      }
+    }, 300);
   }
   
   // Update the suggestions container structure with categories
@@ -735,4 +753,19 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     </style>
   `);
+  
+  // Get the suggestions container
+  const suggestionsContainer = document.querySelector('.suggestions-container');
+  
+  // Hide suggestions when user starts typing
+  messageInput.addEventListener('input', function() {
+    if (this.value.trim() !== '') {
+      suggestionsContainer.classList.add('hidden');
+    } else {
+      // Only show suggestions if translate mode is not active
+      if (!isTranslateMode) {
+        suggestionsContainer.classList.remove('hidden');
+      }
+    }
+  });
 });
